@@ -4,6 +4,11 @@ public class Vehicle {
 	protected String color;
 	private int maxSpeed;
 	
+	public Vehicle(int maxSpeed) {
+		this.maxSpeed = maxSpeed;
+		System.out.println("In Vehicle Constructor");
+	}
+	
 	public int getMaxSpeed() {
 		return maxSpeed;
 	}

@@ -28,10 +28,10 @@ public class Fraction {
 	}
 	
 	
-	public void setDenominator(int d) {
+	public void setDenominator(int d) throws ZeroDenominatorException {
 		if (d == 0){
-			// TODO error out
-			return;
+			ZeroDenominatorException exception = new ZeroDenominatorException();
+			throw exception;
 		}
 		this.denominator = d;
 		this.simplify();

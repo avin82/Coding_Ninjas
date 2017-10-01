@@ -1,8 +1,8 @@
 package classes_and_objects;
 
 public class FractionUse {
-
-	public static void main(String[] args) {
+	
+	public static void fractionalOperations() throws ZeroDenominatorException {
 		Fraction f1 = new Fraction(20,30);
 		f1.print();
 		// 2/3
@@ -36,6 +36,20 @@ public class FractionUse {
 		f1.print();
 		f3.print();
 		f4.print();
+	}
+
+	public static void main(String[] args) {
+		int i = 47;
+		try {
+			i++;
+			fractionalOperations();
+		} catch (ZeroDenominatorException e) {
+			System.out.println("Dont provide 0 as denominator");
+		} finally {
+			System.out.println("Fractional operations cannot be done using 0 denominator");
+		}
+		System.out.println(i);
+		
 	}
 
 }
