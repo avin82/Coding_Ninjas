@@ -48,6 +48,7 @@ public class MinimumLengthWord {
 		 */
 		
 		Scanner scanner = new Scanner(System.in);
+		System.out.print("Please enter a string to find the word with minimum length: ");
 		String input = scanner.nextLine();
 		System.out.println(minLengthWord(input));
 	}

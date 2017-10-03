@@ -7,10 +7,9 @@ public class PrintNumbers {
 	public static int i = 0;
 	
 	public static void print(int n) {
-		if (n <= 0 || n > 10000) {
+		if (n < 1 || n > 10000) {
 			return;
-		} 
-		if (n == 1) {
+		} else if (n == 1) {
 			System.out.print(++i);
 		} else {
 			System.out.print(++i + " ");	
