@@ -29,7 +29,11 @@ public class BinarySearch {
 					start = middle + 1;
 					middle = (start + end) / 2;
 					if (start == end) {
-						return -1;
+						if (num != arr[middle]) {
+							return -1;
+						} else {
+							break;
+						}
 					}
 				}
 			}
