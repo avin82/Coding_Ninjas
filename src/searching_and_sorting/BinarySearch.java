@@ -16,29 +16,33 @@ public class BinarySearch {
 		return arr;
 	}
 	
-		public static int binarySearch(int[] arr, int num) {
-			int start = 0, end = arr.length - 1, middle = (start + end) / 2;
-			while(num != arr[middle]) {
-				if (num < arr[middle]) {
-					end = middle - 1; 
-					middle = (start + end) / 2;
-					if (start > end) {
+	public static int findmiddle(int start, int end) {
+		return (start + end) / 2;
+	}
+	
+	public static int binarySearch(int[] arr, int num) {
+		int start = 0, end = arr.length - 1, middle = findmiddle(start, end);
+		while(num != arr[middle]) {
+			if (num < arr[middle]) {
+				end = middle - 1; 
+				middle = findmiddle(start, end);
+				if (start > end) {
+					return -1;
+				}
+			} else {
+				start = middle + 1;
+				middle = findmiddle(start, end);
+				if (start == end) {
+					if (num != arr[middle]) {
 						return -1;
-					}
-				} else {
-					start = middle + 1;
-					middle = (start + end) / 2;
-					if (start == end) {
-						if (num != arr[middle]) {
-							return -1;
-						} else {
-							break;
-						}
+					} else {
+						break;
 					}
 				}
 			}
-			return middle;
 		}
+		return middle;
+	}
 	
 	public static void main(String[] args) {
 		
