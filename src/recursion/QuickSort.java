@@ -2,8 +2,6 @@ package recursion;
 
 import java.util.Scanner;
 
-import javax.print.DocFlavor.INPUT_STREAM;
-
 public class QuickSort {
 	
 	public static int[] takeInput() {
