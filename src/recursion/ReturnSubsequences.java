@@ -24,7 +24,7 @@ public class ReturnSubsequences {
 	public static void main(String[] args) {
 		
 		/*
-		 Find and print the subsequences of a given string.
+		 Return all the subsequences of a given string.
 		 
 		 A subsequence is a sequence that can be derived from another sequence by deleting some elements 
 		 without changing the order of the remaining elements.
