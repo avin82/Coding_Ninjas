@@ -44,7 +44,7 @@ public class ReturnSubsequences {
 		 */
 		
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Please enter a string to find and print its subsequences: ");
+		System.out.print("Please enter a string to return all its subsequences: ");
 		String str = scanner.next();
 		String[] subsequenceArray = findSubsequences(str);
 		System.out.printf("Subsequences of the given string \"%s\" are: %n", str);
