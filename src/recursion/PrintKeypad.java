@@ -2,24 +2,21 @@ package recursion;
 
 import java.util.Scanner;
 
-public class ReturnKeypad {
+public class PrintKeypad {
 	
-	public static String[] keypad(int n) {
-		if (n == 0) {
-			String[] answer = {""};
-			return answer;
+	public static void printKeypad(int input) {
+		printKeypad(input, "");
+	}
+	
+	public static void printKeypad(int input, String outputSoFar) {
+		if (input == 0) {
+			System.out.println(outputSoFar);;
+			return;
 		}
-		String[] smallAnswer = keypad(n / 10);
-		char[] charactersForUnitDigit = findCharactersForUnitDigit(n % 10);
-		String[] answer = new String[smallAnswer.length * charactersForUnitDigit.length];
-		int k = 0;
-		for (int i = 0; i < smallAnswer.length; i++) {
-			for (int j = 0; j < charactersForUnitDigit.length; j++) {
-				answer[k] = smallAnswer[i] + charactersForUnitDigit[j];
-				k++;
-			}
+		char[] charactersForUnitDigit = findCharactersForUnitDigit(input % 10);
+		for (int i = 0; i < charactersForUnitDigit.length; i++) {
+			printKeypad(input / 10, charactersForUnitDigit[i] + outputSoFar);
 		}
-		return answer;
 	}
 	
 	public static char[] findCharactersForUnitDigit(int n) {
@@ -56,10 +53,9 @@ public class ReturnKeypad {
 	public static void main(String[] args) {
 		
 		/*
+		 Given an integer n, using phone keypad find out and print all the possible strings that can be made using digits of input n. 
 		 
-		 Given an integer n, using phone keypad find out all the possible strings that can be made using digits of input n. 
-		 
-		 Note : The order of strings are not important. 
+		 Note : The order of strings are not important. Just print different strings in new lines. 
 		 
 		 Input Format : 
 		 Integer n 
@@ -83,18 +79,12 @@ public class ReturnKeypad {
 		 cd 
 		 ce 
 		 cf
-		 
 		 */
 		
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Please enter an integer n to find all possible keypad combinations: ");
+		System.out.print("Please enter an integer n to print all possible keypad combinations: ");
 		int n = scanner.nextInt();
-		String[] keypadCombinations = keypad(n);
-		System.out.printf("All the possible keypad combinations for the number %d are as given below: %n", n);
-		for (int i = 0; i < keypadCombinations.length; i++) {
-			System.out.println(keypadCombinations[i]);
-			
-		}
+		printKeypad(n);
 	}
 
 }
