@@ -2,7 +2,7 @@ package recursion;
 
 import java.util.Scanner;
 
-public class FindSubsequences {
+public class ReturnSubsequences {
 	
 	
 	public static String[] findSubsequences(String str) {
