@@ -83,7 +83,6 @@ public class BinarySearch {
 		 */
 		
 		int[] arr = takeInput();
-		
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Please enter a number x to be searched in the given input array using binary search: ");
 		int x = scanner.nextInt();
