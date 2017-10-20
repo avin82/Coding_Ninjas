@@ -2,13 +2,7 @@ package linkedlist;
 
 import java.util.Scanner;
 
-class DoubleNode {
-	Node<Integer> head;
-	Node<Integer> tail;
-
-}
-
-public class ReverseLL2 {
+public class ReverseLL3 {
 	
 	public static Node<Integer> takeInput() {
 		Node<Integer> head = null, tail = null;
@@ -38,26 +32,21 @@ public class ReverseLL2 {
 		System.out.println();
 	}
 	
-	public static DoubleNode reverseLLBetter(Node<Integer> head) {
+	public static Node<Integer> reverseLLR(Node<Integer> head) {
 		if (head == null || head.next == null) {
-			DoubleNode ans = new DoubleNode();
-			ans.head = head;
-			ans.tail = head;
-			return ans;
+			return head;
 		}
-		DoubleNode smallAns = reverseLLBetter(head.next);
-		smallAns.tail.next = head;
+		Node<Integer> reversedTail = head.next;
+		Node<Integer> smallHead = reverseLLR(head.next);
+		reversedTail.next = head;
 		head.next = null;
-		DoubleNode ans = new DoubleNode();
-		ans.head = smallAns.head;
-		ans.tail = head;
-		return ans;
+		return smallHead;
 	}
 	
 	public static void main(String[] args) {
 		Node<Integer> head = takeInput();
-		DoubleNode ans = reverseLLBetter(head);
-		print(ans.head);
+		head = reverseLLR(head);
+		print(head);
 	}
 
 }
