@@ -38,6 +38,9 @@ public class InsertRecursively {
 			newNode.next = head;
 			return newNode;
 		}
+		if (head == null) {
+			return head;
+		}
 		head.next = insertRecurisive(head.next, pos - 1, element);
 		return head;
 	}
