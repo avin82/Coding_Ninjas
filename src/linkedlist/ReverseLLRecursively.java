@@ -2,7 +2,7 @@ package linkedlist;
 
 import java.util.Scanner;
 
-public class ReverseLL {
+public class ReverseLLRecursively {
 	
 	public static LinkedListNode<Integer> takeInput() {
 		LinkedListNode<Integer> head = null, tail = null;
