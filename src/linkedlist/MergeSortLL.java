@@ -2,7 +2,7 @@ package linkedlist;
 
 import java.util.Scanner;
 
-public class MergeTwoSortedLL {
+public class MergeSortLL {
 	
 	public static LinkedListNode<Integer> takeInput() {
 		LinkedListNode<Integer> head = null, tail = null;
@@ -21,6 +21,39 @@ public class MergeTwoSortedLL {
 			data = scanner.nextInt();
 		}
 		return head;
+	}
+	
+	public static int length(LinkedListNode<Integer> head) {
+		LinkedListNode<Integer> temp = head;
+		int count = 1;
+		while (temp.next != null) {
+			count++;
+			temp = temp.next;
+		}
+		return count;
+	}
+	
+	public static LinkedListNode<Integer> getMiddle(LinkedListNode<Integer> head) {
+		LinkedListNode<Integer> middle;
+		LinkedListNode<Integer> slow = head;
+		LinkedListNode<Integer> fast = head;
+		if (head == null) {
+			return head;
+		}
+		if (length(head) % 2 == 0) {
+			while (fast.next.next != null) {
+				slow = slow.next;
+				fast = fast.next.next;
+			}
+			middle = slow;
+		} else {
+			while (fast.next != null) {
+				slow = slow.next;
+				fast = fast.next.next;
+			}
+			middle = slow;
+		}
+		return middle;
 	}
 	
 	public static LinkedListNode<Integer> mergeTwoList(LinkedListNode<Integer> head1, LinkedListNode<Integer> head2) {
@@ -63,35 +96,40 @@ public class MergeTwoSortedLL {
 		System.out.println();
 	}
 	
+	public static LinkedListNode<Integer> mergeSort(LinkedListNode<Integer> head) {
+		if (head == null || head.next == null) {
+			return head;
+		}
+		LinkedListNode<Integer>h1 = head;
+		LinkedListNode<Integer> t1 = getMiddle(head);
+		LinkedListNode<Integer>h2 = t1.next;
+		t1.next = null;
+		return mergeTwoList(mergeSort(h1), mergeSort(h2));
+	}
+	
 	public static void main(String[] args) {
 		/*
-		 Given two linked lists sorted in increasing order. Merge them in such a way that the 
-		 result list is also sorted (in increasing order). 
+		 Sort a given linked list using Merge Sort. 
 		 
-		 Try solving with O(1) auxiliary space (in-place). You just need to return the head 
-		 of new linked list, don't print the elements. 
+		 You don't need to print the elements, just sort the elements and return the head of updated LL. 
 		 
 		 Input format : 
-		 Line 1 : Linked list 1 elements of length n (separated by space and terminated by -1) 
-		 Line 2 : Linked list 2 elements of length m (separated by space and terminated by -1) 
+		 Linked list elements (separated by space and terminated by -1) 
 		 
 		 Output format : 
-		 Merged list elements (separated by space) 
+		 Updated LL elements (separated by space) 
 		 
 		 Constraints : 
-		 1 <= n, m <= 10^4 
+		 1 <= Length of LL <= 1000 
 		 
-		 Sample Input : 
-		 2 5 8 12 -1 
-		 3 6 9 -1 
+		 Sample Input 1 : 
+		 1 4 5 2 -1 
 		 
-		 Sample Output : 
-		 2 3 5 6 8 9 12	
+		 Sample Output 1 : 
+		 1 2 4 5
 		 */
-		LinkedListNode<Integer> head1 = takeInput();
-		LinkedListNode<Integer> head2 = takeInput();
-		LinkedListNode<Integer> head = mergeTwoList(head1, head2);
+		LinkedListNode<Integer> head = takeInput();
+		head = mergeSort(head);
 		print(head);
 	}
-
 }
