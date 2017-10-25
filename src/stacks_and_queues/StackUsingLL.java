@@ -56,6 +56,36 @@ public class StackUsingLL<T> {
 	}
 	
 	public static void main(String[] args) throws StackEmptyException {
+		/*
+		 You need to implement a Stack class using linked list. 
+		 
+		 The data members should be private. 
+		 
+		 Implement the following public functions : 
+		 
+		 1. Constructor - 
+		 Initialises the data member (i.e. head to null). 
+		 
+		 2. push : 
+		 This function should take one argument of type T and has return type void. 
+		 This function should insert an element in the stack. Time complexity should be O(1). 
+		 
+		 3. pop : 
+		 This function takes no input arguments and has return type T. This should removes 
+		 the last element which is entered and return that element as an answer. Time complexity should be O(1). 
+		 
+		 4. top : 
+		 This function takes no input arguments and has return type T. This should 
+		 return the last element which is entered and return that element as an answer. 
+		 Time complexity should be O(1). 
+		 
+		 5. size : 
+		 Return the size of stack i.e. count of elements which are present ins stack right now. 
+		 Time complexity should be O(1). 
+		 
+		 6. isEmpty : 
+		 Checks if the stack is empty or not. Return true or false.
+		 */
 		Scanner scanner = new Scanner(System.in);
         StackUsingLL<Integer> stackLL = new StackUsingLL<Integer>();
         int choice = scanner.nextInt();
