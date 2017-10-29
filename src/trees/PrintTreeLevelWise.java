@@ -66,6 +66,20 @@ public class PrintTreeLevelWise {
 		return count;
 	}
 	
+	public static int largest(TreeNode<Integer> root) {
+		if (root == null) {
+			return Integer.MIN_VALUE;
+		}
+		int ans = root.data;
+		for (int i = 0; i < root.children.size(); i++) {
+			int largestChild = largest(root.children.get(i));
+			if (largestChild > ans) {
+				ans = largestChild;
+			}
+		}
+		return ans;
+	}
+	
 	public static void main(String[] args) {
 		/*
 		 Given a generic tree, print the input tree in level wise order. That is, 
@@ -88,6 +102,7 @@ public class PrintTreeLevelWise {
 		TreeNode<Integer> root = takeInputLevelWise();
 		printLevelWise(root);
 		System.out.printf("There are %d nodes in the tree.%n", numNodes(root));
+		System.out.printf("%d is the largest node in the tree.", largest(root));
 	}
 
 }
