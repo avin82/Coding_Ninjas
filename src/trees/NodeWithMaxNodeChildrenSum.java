@@ -75,7 +75,7 @@ public class NodeWithMaxNodeChildrenSum {
 		 1
 		 */
 		TreeNode<Integer> root = takeInputLevelWise();
-		System.out.println(maxSumNode(root).data);
+		System.out.printf("Node for which sum of all children and the node itself is maximum is %d", maxSumNode(root).data);
 	}
 
 }
