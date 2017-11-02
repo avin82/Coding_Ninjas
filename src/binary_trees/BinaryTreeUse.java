@@ -100,6 +100,16 @@ public class BinaryTreeUse {
 		printTree(root.right);
 	}
 	
+	public static int countNodes(BinaryTreeNode<Integer> root) {
+		if (root == null) {
+			return 0;
+		}
+		int ans = 1;
+		ans += countNodes(root.left);
+		ans += countNodes(root.right);
+		return ans;
+	}
+	
 	public static void main(String[] args) {
 //		BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(1);
 //		BinaryTreeNode<Integer> node1 = new BinaryTreeNode<Integer>(2);
@@ -110,6 +120,7 @@ public class BinaryTreeUse {
 //		BinaryTreeNode<Integer> root = takeInput(scanner);
 		BinaryTreeNode<Integer> root = takeInputLevelWise();
 		printTree(root);
+		System.out.printf("There are %d nodes in the given binary tree.%n", countNodes(root));
 //		scanner.close();
 	}
 }
