@@ -59,6 +59,26 @@ public class DiameterOfBinaryTree {
 		return 1 + Math.max(height(root.left), height(root.right));
 	}
 	
+	public static Pair<Integer, Integer> heightDiameter(BinaryTreeNode<Integer> root) {
+		if (root == null) {
+			Pair<Integer, Integer> output = new Pair<>();
+			output.first = 0;
+			output.second = 0;
+			return output;
+		}
+		Pair<Integer, Integer> leftOutput = heightDiameter(root.left);
+		Pair<Integer, Integer> rightOutput = heightDiameter(root.right);
+		int height = 1 + Math.max(leftOutput.first, rightOutput.first);
+		int option1 = leftOutput.first + rightOutput.first;
+		int option2 = leftOutput.second;
+		int option3 = rightOutput.second;
+		int diameter = Math.max(option1, Math.max(option2, option3));
+		Pair<Integer, Integer> output = new Pair<>();
+		output.first = height;
+		output.second = diameter;
+		return output;
+	}
+	
 	public static void printLevelWise(BinaryTreeNode<Integer> root) {
 		QueueUsingLL<BinaryTreeNode<Integer>> pendingNodes = new QueueUsingLL<>();
 		pendingNodes.enqueue(root);
@@ -94,6 +114,10 @@ public class DiameterOfBinaryTree {
 		 */
 		BinaryTreeNode<Integer> root = takeInputLevelWise();
 		printLevelWise(root);
-		System.out.printf("Diameter of the given binary tree is %d%n", diameter(root));
+		//	Time complexity is O(n*h), where h is height of the tree.
+//		System.out.printf("Diameter of the given binary tree is %d%n", diameter(root));
+		// Time complexity improved as O(n) with heightDiameter function
+		System.out.printf("Diameter of the given binary tree is %d%n", heightDiameter(root).second);
+		System.out.printf("Height of the given binary tree is %d%n", heightDiameter(root).first);
 	}
 }
