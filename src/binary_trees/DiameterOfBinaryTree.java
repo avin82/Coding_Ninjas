@@ -94,6 +94,6 @@ public class DiameterOfBinaryTree {
 		 */
 		BinaryTreeNode<Integer> root = takeInputLevelWise();
 		printLevelWise(root);
-		System.out.printf("Diamter of the given binary tree is %d%n", diameter(root));
+		System.out.printf("Diameter of the given binary tree is %d%n", diameter(root));
 	}
 }
