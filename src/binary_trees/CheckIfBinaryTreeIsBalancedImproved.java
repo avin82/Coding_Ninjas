@@ -87,6 +87,7 @@ public class CheckIfBinaryTreeIsBalancedImproved {
 	
 	public static void main(String[] args) {
 		/*
+		 * Improved time complexity as O(n) as compared to O(n * height of binary tree) from CheckIfBinaryTreeIsBalanced.java 
 		 Given a binary tree, check if its balanced i.e. depth of left and right subtrees of every node 
 		 differ by at max 1. Return true if given binary tree is balanced, false otherwise. 
 		 
