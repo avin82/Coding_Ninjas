@@ -8,8 +8,6 @@ import stacks_and_queues.QueueUsingLL;
 
 public class PrintElementsInRangeFromBST {
 	
-	QueueUsingLL<BinaryTreeNode<Integer>> queueUsingLL = new QueueUsingLL<>();
-	
 	public static BinaryTreeNode<Integer> takeInputLevelWise() {
 		Scanner scanner = new Scanner(System.in);
 		QueueUsingLL<BinaryTreeNode<Integer>> pendingNodes = new QueueUsingLL<>();
