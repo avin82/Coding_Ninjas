@@ -59,7 +59,7 @@ public class CheckIfBinaryTreeIsBST {
 	}
 	
 	public static boolean isBST(BinaryTreeNode<Integer> root) {
-		//	Time complexity is O(n
+		//	Time complexity is nlogn
 		if (root == null) {
 			return true;
 		}
@@ -106,6 +106,7 @@ public class CheckIfBinaryTreeIsBST {
 	}
 	
 	public static boolean isBST3(BinaryTreeNode<Integer> root, int min, int max) {
+		//	Time complexity again is O(n)
 		if (root == null) {
 			return true;
 		}
