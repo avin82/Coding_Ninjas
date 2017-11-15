@@ -69,8 +69,17 @@ public class RootToNodePathInBinaryTree {
 	
 	public static void main(String[] args) {
 		/*
-		 Given a binary tree, and data of a node in the binary tree. Return an array list which contains the path
-		 of the root to node path (or node to root path; order of array list can be root to node or node to root).
+		 Given a binary tree and an integer k. Find and return the path from the node with data k 
+		 and root (if a node with data k is present in given Binary Tree). Return null otherwise.
+		 
+		 Input Format : 
+		 Line 1 : Elements in level order form (separated by space) 
+		 (If any node does not have left or right child, take -1 in its place) 
+		 Line 2 : 
+		 Integer k 
+		 
+		 Output Format : 
+		 Path from node k to root
 		 
 		 Sample Input: 
 		 1 3 2 4 5 -1 6 -1 -1 -1 -1 -1 -1
