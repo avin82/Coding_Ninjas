@@ -44,7 +44,7 @@ public class CheckNodePresenceInBinaryTree {
 		return root;
 	}
 	
-	public static boolean isNodePresent(BinaryTreeNode<Integer> root,int x) {
+	public static boolean isNodePresent(BinaryTreeNode<Integer> root, int x) {
 		if (root == null) {
 			return false;
 		}
