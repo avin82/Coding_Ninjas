@@ -3,11 +3,11 @@ package priority_queue;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Priority_Queue {
+public class MinimumPriority_Queue {
 	
 	private ArrayList<Integer> heap;
 	
-	public Priority_Queue() {
+	public MinimumPriority_Queue() {
 		heap = new ArrayList<>();
 	}
 	
@@ -76,7 +76,7 @@ public class Priority_Queue {
 	}
 	
 	public static void main(String[] args) {
-		Priority_Queue pq = new Priority_Queue();
+		MinimumPriority_Queue pq = new MinimumPriority_Queue();
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
 		while(choice != -1) {
