@@ -1,2 +1,2 @@
 # Coding_Ninjas
-Java Foundation with Data Structures
+My work for Java Foundation with Data Structures from Coding Ninjas
